@@ -15,9 +15,12 @@
   "license": "MIT",
   "dependencies": {
     "async": "^2.1.2",
+    "body-parser": "^1.15.2",
     "debug": "^2.2.0",
+    "express": "^4.14.0",
     "multer": "^1.2.0",
     "pdf2json": "^1.1.7",
+    "pug": "^2.0.0-beta6",
     "underscore": "^1.8.3",
     "validator": "^6.1.0"
   }
