@@ -2,6 +2,7 @@
   "name": "recognize",
   "version": "1.0.0",
   "description": "recognize emails from pdf",
+  "repository": "git@github.com:pejrak/pdf2email.git",
   "main": "app.js",
   "scripts": {
     "test": "DEBUG=* node scripts/test_api_upload.js",
@@ -19,7 +20,6 @@
     "debug": "^2.2.0",
     "express": "^4.14.0",
     "multer": "^1.2.0",
-    "pdf2json": "^1.1.7",
     "pug": "^2.0.0-beta6",
     "request": "^2.78.0",
     "underscore": "^1.8.3",
