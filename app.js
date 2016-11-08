@@ -38,7 +38,7 @@ app.post('/upload', upload.single('input_file'), (req, res) => {
 app.post('/api/upload', upload.single('input_file'), (req, res) => {
   debug(`FILE RECEIVED TO API: ${inspect(req.file)}`)
   
-  const { path: filePath } = req.file
+  const { path: filePath, originalname } = req.file
   const { client_name } = req.body
   
   if (client_name && config.ApiClients.indexOf(client_name) > -1) {
@@ -46,7 +46,11 @@ app.post('/api/upload', upload.single('input_file'), (req, res) => {
       if (errors) {
         res.status(500).send('Error parsing the file provided!')
       } else {
-        res.send({ emails: extract.emails(textContent) })
+        res.send({ 
+          emails: extract.emails(textContent),
+          originalname,
+          originalname_base64: new Buffer(originalname).toString('base64')
+        })
       }
     })
   } else {

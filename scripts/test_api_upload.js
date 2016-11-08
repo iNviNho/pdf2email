@@ -13,7 +13,8 @@ const formData = {
 }
 
 request.post({
-  url: `http://localhost:${config.port}/api/upload`, formData 
+  url: `http://localhost:${config.port}/api/upload`,
+  formData 
 }, (error, httpResponse, body) => {
   debug(
     `request responded with error: ${inspect(error)}, body: ${inspect(body)}`
